@@ -41,15 +41,19 @@ export default function Home() {
     const address = value.trim();
   
     console.log("Acc",accounts)
+
+    const acc1 = accounts[0]
+
+    console.log("the acc 1 is buyer is ", acc1)
   
     // Execute smart contract function
-    await contract.methods.buyProduct("0x4aAf79e9834915e5081E36445F0c9d9De619b3fb").send({
-      from: "0x4aAf79e9834915e5081E36445F0c9d9De619b3fb",
-      value: web3.utils.toWei('0.001', 'ether'),
+    await contract.methods.buyProduct(accounts[0]).send({
+      from: accounts[0],
+      value: web3.utils.toWei('2', 'ether'),
       gas: 500000 // or any higher value
     })
   
-    const temppool = await contract.methods.getBalance("0x4aAf79e9834915e5081E36445F0c9d9De619b3fb").call()
+    const temppool = await contract.methods.getBalance(accounts[0]).call()
     // const valueinEth = convertWeiToEth(temppool)
     settemp(temppool)
   
@@ -65,7 +69,7 @@ export default function Home() {
   const handleReleaseFunds = async () => {
     const accounts = await web3.eth.getAccounts();
     await contract.methods.releaseFunds().send({
-      from: "0x4aAf79e9834915e5081E36445F0c9d9De619b3fb",
+      from: accounts[0],
       gas: 500000 // or any higher value
     });
   }
