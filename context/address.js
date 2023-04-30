@@ -1,3 +1,3 @@
 import paymentgateway from "./PaymentGateway.json"
-export const MarketAddress = '0x509010dC3309627b0a82ce6a8aDaA4cdB3194926';
+export const MarketAddress = '0x3cA8E4B415CBf8DC767e6D6a61dD554d6621D1A7';
 export const MarketAddressABI = paymentgateway.abi;

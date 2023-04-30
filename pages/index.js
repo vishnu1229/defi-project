@@ -45,7 +45,7 @@ export default function Home() {
     // Execute smart contract function
     await contract.methods.buyProduct(accounts[0]).send({
       from: accounts[0],
-      value: web3.utils.toWei('0.01', 'ether'),
+      value: web3.utils.toWei('0.001', 'ether'),
       gas: 500000 // or any higher value
     })
   

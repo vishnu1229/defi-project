@@ -22,7 +22,7 @@ const Confirmation = () => {
     const accounts = await web3Instance.eth.getAccounts();
 
     try {
-      await contractInstance.methods.releaseFunds("0xC15fE51e09f020D3C1ce9c89ddD01987f066A459",price).send({
+      await contractInstance.methods.releaseFunds("0xb206d55DC63435844fab4fc0A6c8D1ac8FD672c0",price).send({
         from: accounts[0],
         gas: 500000 // or any higher value
       });
